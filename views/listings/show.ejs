@@ -21,7 +21,7 @@
     <br>
 
     <div class="btns mb-5">
-        <% if (currUser===listing.owner) { %>
+        <% if (currUser.username === listing.owner.username) { %>
         <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
             <form method="post" action="/listings/<%= listing._id %>?_method=DELETE">
                 <button class="btn btn-dark offset-5">Delete</button>
@@ -75,7 +75,8 @@
                           <p class="starability-result card-text"   data-rating= "<%= review.rating %>"></p>
                         <p class="card-text"><%= review.comment %></p>
                         <form class="mb-3" method="POST" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE">
-                            <% if (currUser===listing.review.author) { %>
+                            <!--  if(!review.author.equals(res.locals.currUser._id) --> 
+                            <% if (currUser._id == listing.review.author) { %>
                             <button class="btn btn-sm btn-dark">Delete</button>
                             <% } %>
                         </form>
