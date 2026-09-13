@@ -23,6 +23,21 @@ body {
   color: var(--text);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-weight: 800;
+}
+
 .container {
   flex: 1;
   max-width: 1240px;
@@ -32,6 +47,7 @@ body {
 
 .navbar {
   height: auto;
+  padding: 0.7rem 0;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 24px rgba(26, 30, 38, 0.05);
@@ -41,6 +57,7 @@ body {
 .navbar-brand {
   display: inline-flex;
   align-items: center;
+  padding: 0.25rem 0.5rem;
 }
 
 .fa-compass {
@@ -107,6 +124,11 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.listing-link {
+  display: block;
+  height: 100%;
+}
+
 .listing-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 22px 40px rgba(31, 36, 48, 0.12);
@@ -117,6 +139,11 @@ body {
   width: 100% !important;
   height: 20rem !important;
   object-fit: cover !important;
+  transition: transform 0.35s ease;
+}
+
+.listing-card:hover .card-img-top {
+  transform: scale(1.035);
 }
 
 .card-body {
@@ -128,6 +155,12 @@ body {
   color: var(--text);
   font-weight: 600;
   line-height: 1.7;
+}
+
+.card-text b {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
 }
 
 .card-text p {
@@ -241,6 +274,7 @@ body {
   background: var(--surface);
   color: var(--text);
   box-shadow: none;
+  min-width: 220px;
 }
 
 .search-inp:focus {
@@ -249,7 +283,7 @@ body {
 }
 
 .show-img {
-  height: 30vh;
+  height: clamp(240px, 42vh, 460px);
   object-fit: cover;
   border-radius: 1.2rem;
   box-shadow: var(--shadow);
@@ -260,6 +294,42 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1rem;
+}
+
+.show-card .card-body {
+  padding: 1.5rem !important;
+}
+
+.show-card .card-text {
+  margin-bottom: 0.8rem;
+}
+
+.form-label {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.form-control,
+.form-select,
+textarea,
+input {
+  border-color: var(--line) !important;
+  background-color: rgba(255, 255, 255, 0.78) !important;
+  padding: 0.75rem 0.9rem !important;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus,
+input:focus {
+  border-color: rgba(255, 107, 87, 0.65) !important;
+  box-shadow: 0 0 0 0.22rem rgba(255, 107, 87, 0.14) !important;
+}
+
+.review-card {
+  border: 1px solid var(--line) !important;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .show-card {
@@ -288,6 +358,31 @@ input {
 
   .navbar {
     padding: 0.4rem 0;
+  }
+
+  .navbar form {
+    margin: 0.75rem 0;
+  }
+
+  .search-inp {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .navbar .nav-link {
+    padding: 0.65rem 0;
+  }
+
+  .card-img-top {
+    height: 16rem !important;
+  }
+
+  .show-img {
+    height: 260px;
+  }
+
+  .btns {
+    margin-left: 0;
   }
 
   .tax-toggle {

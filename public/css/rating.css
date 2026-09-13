@@ -89,7 +89,9 @@
 }
 
 .starability-slot > input:focus + label {
-  outline: 1px dotted #999;
+  outline: 2px solid #ff6b57;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .starability-slot .starability-focus-ring {
@@ -108,7 +110,6 @@
 
 .starability-slot > label {
   position: relative;
-  display: inline-block;
   float: left;
   width: 30px;
   height: 30px;
@@ -194,4 +195,16 @@
 .starability-slot > input:focus ~ label {
   -webkit-transition: background-position .7s;
   transition: background-position .7s;
+}
+
+.starability-result {
+  margin: 0.35rem 0 0.8rem;
+}
+
+@media (max-width: 480px) {
+  .starability-slot,
+  .starability-result {
+    transform: scale(0.9);
+    transform-origin: left center;
+  }
 }
