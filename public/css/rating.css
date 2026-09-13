@@ -201,10 +201,10 @@
   margin: 0.35rem 0 0.8rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .starability-slot,
   .starability-result {
-    transform: scale(0.9);
+    transform: scale(0.8);
     transform-origin: left center;
   }
 }
